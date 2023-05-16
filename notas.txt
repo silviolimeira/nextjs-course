@@ -1,3 +1,32 @@
 
 $ npm run dev
 
+Criando o projeto inicial nextjs-pre-rendering
+$ npx create-next-app
+
+initial config setup
+=============================================================================
+sicemal@DESKTOP-DFJBPVD:~/nextjs/nextjs-course$ npx create-next-app
+npx: installed 1 in 1.459s
+✔ What is your project named? … nextjs-pre-rendering
+✔ Would you like to use TypeScript with this project? … No / Yes
+✔ Would you like to use ESLint with this project? … No / Yes
+✔ Would you like to use Tailwind CSS with this project? … No / Yes
+✔ Would you like to use `src/` directory with this project? … No / Yes
+✔ Use App Router (recommended)? … No / Yes
+? Would you like to customize the default import alias? › No / Yes
+=============================================================================
+# Node 16.8.0 pre-required
+  $ node version 16.8.0 pre-required
+  $ nvm install 16.8.0
+
+
+
+$ cd nextjs-pre-rendering
+
+$ npm install
+
+
+
+$ npm run dev
+
