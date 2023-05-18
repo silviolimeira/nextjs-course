@@ -9,6 +9,7 @@ export async function getServerSideProps(context) {
 
   //console.log(req);
   //console.log(res);
+  console.log("Server side code - Not pre-generate");
 
   return {
     props: {
