@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import useSWR from "swr";
 
-function LastSalesPage() {
-  const [sales, setSales] = useState();
+function LastSalesPage(props) {
+  const [sales, setSales] = useState(props.sales);
   const [isLoading, setIsLoading] = useState(false);
 
   const fetcher = (...args) =>
@@ -21,13 +21,17 @@ function LastSalesPage() {
 
   const { error } = useSWR("http://172.21.64.1:8080/sales", fetcher);
 
+  /*
   if (isLoading) {
     return <p>Loading ...</p>;
   }
+  */
 
   if (error) {
     return <p>Failed to load.</p>;
   }
+
+  console.log("sales: ", sales);
 
   if (!sales) {
     return <p>Loading...</p>;
@@ -44,6 +48,15 @@ function LastSalesPage() {
       ))}
     </ul>
   );
+}
+
+export async function getStaticProps() {
+  const response = await fetch("http://172.21.64.1:8080/sales");
+  const data = await response.json();
+
+  // dev confuration
+  //return { props: { sales: data.content }, revalidate: 10 };
+  return { props: { sales: data.content } };
 }
 
 export default LastSalesPage;
